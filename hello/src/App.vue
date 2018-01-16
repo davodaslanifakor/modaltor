@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>vue-modal-tor</title>
-
-  </head>
-  <body>
-    <div id="app">
-    
-
-      <div>	
-
-        <vue-modaltor  :visibel="open" @hide="hideModal" :defaultWidth="'50%'"  :resizeWidth='{1200:"70%",992:"100%"}'>
+<template>
+  <div id="app">
+    <img src="./assets/logo.png">
+    <h1>{{ msg }}</h1>
+    <h2>Essential Links</h2>
+     <vue-modaltor  :visibel="open" @hide="hideModal" :defaultWidth="'50%'"  :resizeWidth='{1200:"70%",992:"100%"}'>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -37,31 +29,71 @@
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </vue-modaltor>
-        <button @click="open = true">{{open}} modal-basic</button>
-      </div>
-    </div>
-    <!-- <script src="/dist/build.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <script src="./dist/vue-modaltor.min.js"></script>
-    <script>
-    
-    var app = new Vue({
-      el: '#app',
-      components : {
-        'vue-modaltor':VueModalTor
-      },
-      data: {
-          open:false
-        
+                <button @click="open = true">{{open}} modal-basic</button>
+
+    <ul>
+      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
+      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
+      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
+      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+    </ul>
+    <h2>Ecosystem</h2>
+    <ul>
+      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
+      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
+      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import VueModalTor from '../../dist/vue-modaltor.js'
+export default {
+  name: 'app',
+    components: {
+    'vue-modaltor':VueModalTor
+  },
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+           open:false
+         }
       },
       methods:{
         hideModal(){
           this.open = false
         }
       }
-    })
-//  Vue.use(VueModalTor);
+ 
+}
+</script>
 
-    </script>
-  </body>
-</html>
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #42b983;
+}
+</style>
