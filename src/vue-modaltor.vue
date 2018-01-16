@@ -21,8 +21,7 @@
 
 <script>
 export default {
-
-	name: 'modal-vue-perfect',
+	name : 'vue-modaltor',
 	props: {
 		visibel: {
 			type: Boolean,

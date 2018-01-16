@@ -1,79 +1,61 @@
-var path = require('path')
-var webpack = require('webpack')
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const path = require('path');
 
-module.exports = {
-  entry: './src/main.js',
+var config = {
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    path: path.resolve(__dirname + '/dist/'),
   },
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
-      },      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-          }
-          // other vue-loader options go here
-        }
-      },
+    loaders: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        include: __dirname,
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!less!css'
       }
     ]
   },
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    },
-    extensions: ['*', '.js', '.vue', '.json']
+  externals: {
+    moment: 'moment'
   },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true,
-    overlay: true,
-    port:6060
-  },
-  performance: {
-    hints: false
-  },
-  devtool: '#eval-source-map'
-}
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin( {
+      minimize : true,
+      sourceMap : false,
+      mangle: true,
       compress: {
         warnings: false
       }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ])
-}
+    } )
+  ]
+};
+
+
+module.exports = [
+  merge(config, {
+    entry: path.resolve(__dirname + '/src/plugin.js'),
+    output: {
+      filename: 'vue-modaltor.min.js',
+      libraryTarget: 'window',
+      library: 'VueModalTor',
+    }
+  }),
+  merge(config, {
+    entry: path.resolve(__dirname + '/src/vue-modaltor.vue'),
+    output: {
+      filename: 'vue-modaltor.js',
+      libraryTarget: 'umd',
+      library: 'vue-modaltor',
+      umdNamedDefine: true
+    }
+  })
+];
