@@ -1,18 +1,24 @@
-# vue-modal-tor
+# vue-modaltor
 
-> this is a modal plugin for vuejs and i hope useful for evrybody ...  Thank you for your stars ...
+ this is a modal plugin for vuejs and i hope it be useful for everyone . 
+# Note :
+there are still works need  to be done for buitding the component and it's not ready tp publish on npm
 
 ## Build Setup
 
 ``` bash
 # install dependencies
 npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
 # build for production with minification
 npm run build
 ```
+then you can import modaltor like this, also there is a living example in hello directory
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+```javascript
+import VueModalTor from '../../dist/vue-modaltor.js'
+export default {
+    components: {
+    'vue-modaltor':VueModalTor
+  }
+}
+```
