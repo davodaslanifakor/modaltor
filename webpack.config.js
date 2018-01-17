@@ -29,9 +29,9 @@ var config = {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin( {
-      minimize : true,
+      minimize : false,
       sourceMap : false,
-      mangle: true,
+      mangle: false,
       compress: {
         warnings: false
       }
@@ -45,8 +45,8 @@ module.exports = [
     entry: path.resolve(__dirname + '/src/plugin.js'),
     output: {
       filename: 'vue-modaltor.min.js',
-      libraryTarget: 'window',
-      library: 'VueModalTor',
+      libraryTarget: 'window',                              
+      library: 'VueModaltor',
     }
   }),
   merge(config, {

@@ -48,12 +48,12 @@
 </template>
 
 <script>
-import VueModalTor from '../../dist/vue-modaltor.js'
+// import VueModalTor from '../../dist/vue-modaltor.js'
 export default {
   name: 'app',
-    components: {
-    'vue-modaltor':VueModalTor
-  },
+  //   components: {
+  //   'vue-modaltor':VueModalTor
+  // },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
