@@ -12,6 +12,13 @@ npm install
 # build for production with minification
 npm run build
 ```
+
+you can see demo hear
+
+
+[Demo](https://davodaslanifakor.github.io/modaltor)
+
+
 then you can import modaltor like this, also there is a living example in hello directory
 
 ```javascript
