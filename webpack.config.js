@@ -44,17 +44,9 @@ module.exports = [
   merge(config, {
     entry: path.resolve(__dirname + '/src/plugin.js'),
     output: {
-      filename: 'vue-modaltor.min.js',
-      libraryTarget: 'window',                              
-      library: 'VueModaltor',
-    }
-  }),
-  merge(config, {
-    entry: path.resolve(__dirname + '/src/vue-modaltor.vue'),
-    output: {
       filename: 'vue-modaltor.js',
-      libraryTarget: 'umd',
       library: 'vue-modaltor',
+      libraryTarget: 'umd',
       umdNamedDefine: true
     }
   })

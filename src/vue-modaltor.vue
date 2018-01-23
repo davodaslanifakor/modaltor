@@ -20,6 +20,7 @@
 </template>
 
 <script>
+var vm
 export default {
 	name : 'vue-modaltor',
 	props: {
@@ -31,6 +32,7 @@ export default {
 		
 		resizeWidth:{
 			type:Object,
+			
 		},
 		animationPanel:{
 			type: String,
@@ -89,12 +91,15 @@ export default {
 		window.removeEventListener('resize', this.getWindowHeight);
 	},
 	mounted(){
-		this.$nextTick(function() {
-		window.addEventListener('resize', this.getWindowWidth);
-		window.addEventListener('resize', this.getWindowHeight);
-		  this.getWindowWidth()
-		  this.getWindowHeight()
+		vm = this
+		this.$nextTick().then(function(){
+window.addEventListener('resize', vm.getWindowWidth);
+		window.addEventListener('resize', vm.getWindowHeight);
+		  vm.getWindowWidth()
+		  vm.getWindowHeight()
 		})
+		
+		
 		
 	},
 	methods:{
@@ -108,7 +113,7 @@ export default {
 				// }
 			},
 			getWindowWidth(event) {
-				// if (this.open) {
+				if (this.resizeWidth) {
 						this.windowWidth = document.documentElement.clientWidth;
 						var filter = Object.keys(this.resizeWidth).find(f=> f >= this.windowWidth)
 						if (filter) {
@@ -117,7 +122,7 @@ export default {
 						else{
 							this.width = this.defaultWidth
 						}
-				// }
+				}
 		},
 		_lockBody() {
 				this.backups.body.height = document.body.style.height

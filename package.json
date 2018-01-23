@@ -1,12 +1,11 @@
 {
   "name": "vue-modaltor",
-  "description": "A Vue.js project",
+  "description": "modal component for vuejs",
   "version": "1.0.0",
   "author": "davodasalnifakor@gmail.com <davodaslanifakor@gmail.com>",
   "main": "dist/vue-modaltor.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot ",
-    "build": "rimraf ./dist && webpack --config ./webpack.config.js"
+    "build": "webpack --config ./webpack.config.js"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
