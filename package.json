@@ -1,22 +1,27 @@
 {
   "name": "vue-modaltor",
   "description": "modal component for vuejs",
-  "version": "1.1.2",
+  "version": "1.1.6",
   "author": "davodasalnifakor@gmail.com <davodaslanifakor@gmail.com>",
   "main": "dist/vue-modaltor.js",
   "scripts": {
     "build": "webpack --config ./webpack.config.js"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-runtime": "^6.23.0",
-    "css-loader": "^1.25.0",
+    "css-loader": "^0.25.0",
     "html-webpack-plugin": "^2.29.0",
+    "imports-loader": "^0.7.1",
+    "sass-resources-loader": "^1.2.1",
+    "scss-loader": "^0.0.1",
     "style-loader": "^0.19.1",
     "vue": "2.5.11",
     "vue-style-loader": "^3.0.1",
-    "webpack-merge": "^4.1.1",
+    "webpack-merge": "^4.1.1"
+  },
+  "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
     "babel-plugin-component": "^0.9.1",
@@ -25,14 +30,28 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.0.0",
     "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.2.0",
     "cross-env": "^3.0.0",
+    "css-loader": "^0.25.0",
     "expose-loader": "^0.7.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.9.0",
+    "img-loader": "^2.0.0",
     "less": "^2.7.3",
     "less-loader": "^4.0.3",
+<<<<<<< HEAD
+=======
+    "node-sass": "^4.5.2",
+    "purifycss-webpack": "^0.7.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.6",
+    "url-loader": "^0.5.8",
+>>>>>>> f90ee464ef8d0b45d535375f7ae6cd3765478d7b
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "2.5.11",
     "webpack": "^3.10.0",
     "webpack-chunk-hash": "^0.4.0",
     "webpack-dev-server": "^2.2.0"
-  }
+}
 }
