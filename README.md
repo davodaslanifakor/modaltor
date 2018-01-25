@@ -46,17 +46,15 @@ if you are no using any build system you can include it in your project like thi
 
 ```
 ```js
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                open: false
-            },
-            methods: {
-                hideModal() {
-                    this.open = false
-                }
-            }
-        })
-    </script>
+      var app = new Vue({
+          el: '#app',
+          data: {
+              open: false
+          },
+          methods: {
+              hideModal() {
+                  this.open = false
+              }
+          }
+      })
 ```
