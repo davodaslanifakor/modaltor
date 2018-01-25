@@ -1,6 +1,9 @@
 # vue-modaltor
 
- vue modal component for vuejs and i hope it be useful for everyone . 
+ vue modal component for vuejs and i hope it be useful for everyone ... 
+
+you can see example usages here
+[Demo](https://davodaslanifakor.github.io/modaltor)
 
 ## Installation
 
@@ -12,27 +15,25 @@ npm install vue-modaltor --save
 yarn add vue-modaltor
 ```
 
-you can see example usages here
-[Demo](https://davodaslanifakor.github.io/modaltor)
 
 
 then you can import modaltor like this ...
 
 
-```javascript
+```js
 import Vue from 'vue'
 import VueModalTor from 'vue-modaltor'
 Vue.use(VueModalTor)
 ```
 
-if you are no using any build system you can include it in your project like this : 
+if you are no using any build system you can include it in your project like this ... 
 
-```javascript
+```js
   <script src="/vue-modaltor/dist/vue-modaltor.js"></script>
 ```
 
 #Example 
-```javascript
+```html
      <vue-modaltor  :visible="open" @hide="hideModal">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -43,6 +44,8 @@ if you are no using any build system you can include it in your project like thi
       </vue-modaltor>
       <button @click="open=true">modal-basic</button>
 
+```
+```js
     <script>
         var app = new Vue({
             el: '#app',
