@@ -55,3 +55,55 @@ if you are no using any build system you can include it in your project like thi
       }
   })
 ```
+##Props config
+
+```js
+props: {
+   // this is for toggle show modal 
+   // :visible:false
+    visible: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    // this is for responsive modal and
+    // :resize-width='{1200:"50%",992:"70%",768:"90%"}'
+    resizeWidth:{
+      type:Object,
+    },
+    // this is for anaimating modal 
+    // :animation-panel='modal-slide-right'
+    // :animation-panel='modal-slide-left'
+    // :animation-panel='modal-slide-top'
+    // :animation-panel='modal-slide-bottom'
+    animationPanel:{
+      type: String,
+      required: false,
+      default: 'modal-fade'
+    },
+    // this is for anaimating animationParent modal 
+    // :animation-parent='modal-scale'
+    animationParent:{
+      type: String,
+      required: false,
+      default: 'modal-fade'
+    },
+    //set default width modal
+    // :default-width="'50%'"
+    // :default-width="'495px'"
+    // :default-width="'40em'"
+    defaultWidth:{
+      type: String,
+      required: false,
+      default: '50%'
+    },
+    // this is option for close scroll body when show modal
+    //close-scroll="true"  // if true close scroll body
+    closeScroll:{
+      type: Boolean,
+      required: false,
+      default: true
+    }
+  },
+
+```
