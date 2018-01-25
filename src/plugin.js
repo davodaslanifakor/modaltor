@@ -1,4 +1,3 @@
-// this is a comment for pull
 import vueModaltor from './vue-modaltor.vue';
 const modalTor =  {
   install(Vue, options) {

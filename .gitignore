@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log
 yarn-error.log
 yarn.lock
+dist/
 # Editor directories and files
 .idea
 *.suo

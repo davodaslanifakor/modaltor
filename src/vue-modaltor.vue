@@ -24,7 +24,7 @@ var vm
 export default {
 	name : 'vue-modaltor',
 	props: {
-		visibel: {
+		visible: {
 			type: Boolean,
 			required: false,
 			default: false
@@ -47,7 +47,7 @@ export default {
 		defaultWidth:{
 			type: String,
 			required: false,
-			default: '80%'
+			default: '50%'
 		},
 		closeScroll:{
 			type: Boolean,
@@ -69,7 +69,7 @@ export default {
 		}
 	},
 	watch:{ 
-		visibel(val) {
+		visible(val) {
 			if(val){
 				this.isOpen=true
 				setTimeout(() => this.open = true, 30)
