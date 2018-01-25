@@ -1,7 +1,7 @@
 {
   "name": "vue-modaltor",
   "description": "modal component for vuejs",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "author": "davodasalnifakor@gmail.com <davodaslanifakor@gmail.com>",
   "main": "dist/vue-modaltor.js",
   "scripts": {
