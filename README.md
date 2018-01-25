@@ -15,10 +15,7 @@ npm install vue-modaltor --save
 yarn add vue-modaltor
 ```
 
-
-
 then you can import modaltor like this ...
-
 
 ```js
 import Vue from 'vue'
@@ -28,33 +25,33 @@ Vue.use(VueModalTor)
 
 if you are no using any build system you can include it in your project like this ... 
 
-```js
+```html
   <script src="/vue-modaltor/dist/vue-modaltor.js"></script>
 ```
 
 #Example 
 ```html
-     <vue-modaltor  :visible="open" @hide="hideModal">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </vue-modaltor>
-      <button @click="open=true">modal-basic</button>
+ <vue-modaltor  :visible="open" @hide="hideModal">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </vue-modaltor>
+  <button @click="open=true">modal-basic</button>
 
 ```
 ```js
-      var app = new Vue({
-          el: '#app',
-          data: {
-              open: false
-          },
-          methods: {
-              hideModal() {
-                  this.open = false
-              }
+  var app = new Vue({
+      el: '#app',
+      data: {
+          open: false
+      },
+      methods: {
+          hideModal() {
+              this.open = false
           }
-      })
+      }
+  })
 ```
