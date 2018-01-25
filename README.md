@@ -98,7 +98,7 @@ props: {
       default: '50%'
     },
     // this is option for close scroll body when show modal
-    //close-scroll="true"  // if true close scroll body
+    // :close-scroll="false"  // if true close scroll body
     closeScroll:{
       type: Boolean,
       required: false,
