@@ -5,7 +5,14 @@
 you can see example usages here
 [Demo](https://davodaslanifakor.github.io/modaltor)
 
-## Installation
+# Features
+* no need to handle modal's height manually it extends as the content of modal increases .
+* manage modal's size on diffrent dimenstions with one single attribute (see responsive example)
+* scrollable modal, modal will get scroll if conntent is more than current view page height (see close-scroll example)
+* modals has multiple parent animations (parent-animation example)
+
+
+# Installation
 
 ``` NPM
 npm install vue-modaltor --save
@@ -23,13 +30,13 @@ import VueModalTor from 'vue-modaltor'
 Vue.use(VueModalTor)
 ```
 
-if you are no using any build system you can include it in your project like this ... 
+if you are not using any build system you can include it in your project
 
 ```html
   <script src="/vue-modaltor/dist/vue-modaltor.js"></script>
 ```
 
-#Example 
+# Example 
 ```html
  <vue-modaltor  :visible="open" @hide="hideModal">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -55,7 +62,7 @@ if you are no using any build system you can include it in your project like thi
       }
   })
 ```
-##Props config
+# Props config
 
 ```js
 props: {
@@ -107,3 +114,7 @@ props: {
   },
 
 ```
+
+# TODO List
+- [ ] multiple animations on diffrent device size
+- [ ] 3D Animations
