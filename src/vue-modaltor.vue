@@ -130,6 +130,7 @@ window.addEventListener('resize', vm.getWindowWidth);
 
 				document.body.style.height = '100%'
 				document.body.style.overflow = 'hidden'
+				// document.body.style.paddingRight = '15px'
 			},
 			_unlockBody() {
 				document.body.style.height = this.backups.body.height
