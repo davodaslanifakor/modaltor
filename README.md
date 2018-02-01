@@ -7,12 +7,9 @@ you can see example usages here
 
 # Features
 * no need to handle modal's height manually it extends as the content of modal increases .
-* manage modal's size on diffrent dimenstions with one single attribute  
-[see responsive](https://davodaslanifakor.github.io/modaltor#responsive)
-* scrollable modal, modal will get scroll if conntent is more than current view page height 
-[see close-scroll](https://davodaslanifakor.github.io/modaltor#close-scroll)
-* modals has multiple parent animations 
-[parent-animation](https://davodaslanifakor.github.io/modaltor#animation-parent)
+* manage modal's size on diffrent dimenstions with one single attribute [see responsive](https://davodaslanifakor.github.io/modaltor#responsive)
+* scrollable modal, modal will get scroll if conntent is more than current view page height [see close-scroll](https://davodaslanifakor.github.io/modaltor#close-scroll)
+* modals has multiple parent animations [parent-animation](https://davodaslanifakor.github.io/modaltor#animation-parent)
 
 
 # Installation
