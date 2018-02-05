@@ -95,6 +95,18 @@ props: {
       required: false,
       default: 'modal-fade'
     },
+    // this is for bgcolor overlay
+    bgOverlay:{
+      type: String,
+      required: false,
+      default: '#fff'
+    },
+    // this is for bgcolor panel
+    bgPanel:{
+      type: String,
+      required: false,
+      default: '#fff'
+    },
     //set default width modal
     // :default-width="'50%'"
     // :default-width="'495px'"
