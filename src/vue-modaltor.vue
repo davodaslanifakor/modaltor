@@ -32,7 +32,6 @@ export default {
 		
 		resizeWidth:{
 			type:Object,
-			
 		},
 		animationPanel:{
 			type: String,
@@ -113,7 +112,7 @@ window.addEventListener('resize', vm.getWindowWidth);
 				// }
 			},
 			getWindowWidth(event) {
-				if (this.resizeWidth) {
+				if (this.resizeWidth && Object.keys(this.resizeWidth).length > 0) {
 						this.windowWidth = document.documentElement.clientWidth;
 						var filter = Object.keys(this.resizeWidth).find(f=> f >= this.windowWidth)
 						if (filter) {

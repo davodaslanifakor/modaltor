@@ -10,6 +10,7 @@
   "main": "dist/vue-modaltor.js",
   "scripts": {
     "build": "webpack --config ./webpack.config.js"
+    
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
