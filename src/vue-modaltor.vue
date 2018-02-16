@@ -1,8 +1,8 @@
 <template>
 	<div class="div">
 		<div class="modal-vue-wrapper"  :class="[animationParent,{'modal-vue-wrapper-show' : open}]" v-show="isOpen">
-			<div class="modal-vue-overlay" @click="$emit('hide')"></div>
-			<div class="modal-vue-panel" :class="[animationPanel,{'modal-vue-show':open}]" :style="{width:width}">
+			<div class="modal-vue-overlay" @click="$emit('hide')" :style="{backgroundColor:bgOverlay}"></div>
+			<div class="modal-vue-panel" :class="[animationPanel,{'modal-vue-show':open}]" :style="{width:width,backgroundColor:bgPanel}">
 				<div class="modal-vue-content">
 					<div class="modal-vue-actions"> 
 						<div class="modal-vue-action-close" @click="$emit('hide')">
@@ -20,9 +20,9 @@
 </template>
 
 <script>
-var vm
 export default {
-	name : 'vue-modaltor',
+
+	name: 'modal-vue-perfect',
 	props: {
 		visible: {
 			type: Boolean,
@@ -38,6 +38,16 @@ export default {
 			required: false,
 			default: 'modal-fade'
 		},
+		bgOverlay:{
+			type: String,
+			required: false,
+			default: '#fff'
+		},
+		bgPanel:{
+			type: String,
+			required: false,
+			default: '#fff'
+		},
 		animationParent:{
 			type: String,
 			required: false,
@@ -46,7 +56,7 @@ export default {
 		defaultWidth:{
 			type: String,
 			required: false,
-			default: '50%'
+			default: '80%'
 		},
 		closeScroll:{
 			type: Boolean,
@@ -62,7 +72,8 @@ export default {
 			backups: {
 				body: {
 					height: null,
-					overflow: null
+					overflow: null,
+					paddingRight:null
 				}
 			}
 		}
@@ -90,29 +101,21 @@ export default {
 		window.removeEventListener('resize', this.getWindowHeight);
 	},
 	mounted(){
-		vm = this
-		this.$nextTick().then(function(){
-window.addEventListener('resize', vm.getWindowWidth);
-		window.addEventListener('resize', vm.getWindowHeight);
-		  vm.getWindowWidth()
-		  vm.getWindowHeight()
+		this.$nextTick(function() {
+		window.addEventListener('resize', this.getWindowWidth);
+		window.addEventListener('resize', this.getWindowHeight);
+		  this.getWindowWidth()
+		  this.getWindowHeight()
 		})
-		
-		
 		
 	},
 	methods:{
 		getWindowHeight(event) {
 			this.windowHeight = document.documentElement.clientHeight;
-				// if (this.windowHeight <= 500 && this.measureRating == '%') {
-				// 	this.heightPopupRating=100					
-				// }else if(this.windowHeight <= 500 && this.measureRating == 'px'){
-				// 	this.heightPopupRating=500
-
-				// }
 			},
 			getWindowWidth(event) {
 				if (this.resizeWidth && Object.keys(this.resizeWidth).length > 0) {
+
 						this.windowWidth = document.documentElement.clientWidth;
 						var filter = Object.keys(this.resizeWidth).find(f=> f >= this.windowWidth)
 						if (filter) {
@@ -121,19 +124,19 @@ window.addEventListener('resize', vm.getWindowWidth);
 						else{
 							this.width = this.defaultWidth
 						}
-				}
+					}
 		},
 		_lockBody() {
 				this.backups.body.height = document.body.style.height
 				this.backups.body.overflow = document.body.style.overflow
-
+				document.body.style.paddingRight = '15px'
 				document.body.style.height = '100%'
 				document.body.style.overflow = 'hidden'
-				// document.body.style.paddingRight = '15px'
 			},
 			_unlockBody() {
 				document.body.style.height = this.backups.body.height
 				document.body.style.overflow = this.backups.body.overflow
+				document.body.style.paddingRight = this.backups.body.paddingRight
 			},
 	}
 }
@@ -264,7 +267,7 @@ window.addEventListener('resize', vm.getWindowWidth);
 				display: block;
 				text-align:justify;
 				font-size: 16px;
-				padding-top: 35px;
+				padding-top: 5px;
 				padding-bottom: 10px;
 				flex-grow: 1;
 	

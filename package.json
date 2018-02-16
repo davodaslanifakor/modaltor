@@ -1,7 +1,7 @@
 {
   "name": "vue-modaltor",
   "description": "modal component for vuejs",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "author": "davodasalnifakor@gmail.com <davodaslanifakor@gmail.com>",
   "repository": {
     "type": "git",
@@ -13,17 +13,7 @@
     
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-runtime": "^6.23.0",
-    "css-loader": "^0.25.0",
-    "html-webpack-plugin": "^2.29.0",
-    "imports-loader": "^0.7.1",
-    "sass-resources-loader": "^1.2.1",
-    "scss-loader": "^0.0.1",
-    "style-loader": "^0.19.1",
     "vue": "2.5.11",
-    "vue-style-loader": "^3.0.1",
     "webpack-merge": "^4.1.1"
   },
   "devDependencies": {
