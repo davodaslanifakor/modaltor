@@ -123,6 +123,13 @@ props: {
       required: false,
       default: true
     }
+    // this is option for show image
+    // :img-mode="true" 
+    imgMode:{
+      type: Boolean,
+      required: false,
+      default: false
+    }
   },
 
 ```

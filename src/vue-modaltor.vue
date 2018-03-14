@@ -328,18 +328,7 @@ export default {
 	}
 }
 .modal-vue-actions-parent{
-	&:before(2){
-		content:'';
-		display: block;
-		width: 1px;
-		height: 30px;
-		position: absolute;
-		right: 30px;
-		top:15px;
-		cursor: pointer;
-		z-index: 99;
-		background: red;
-	}
+	
 	&:before , &:after{
 		content:'';
 		display: block;
