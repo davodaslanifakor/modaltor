@@ -10,6 +10,7 @@ you can see example usages here
 * manage modal's size on diffrent dimenstions with one single attribute [see responsive](https://davodaslanifakor.github.io/modaltor#responsive)
 * scrollable modal, modal will get scroll if conntent is more than current view page height [see close-scroll](https://davodaslanifakor.github.io/modaltor#close-scroll)
 * modals has multiple parent animations [parent-animation](https://davodaslanifakor.github.io/modaltor#animation-parent)
+* modals has for image show [img-mode](https://davodaslanifakor.github.io/modaltor#imageMode)
 
 
 # Installation
