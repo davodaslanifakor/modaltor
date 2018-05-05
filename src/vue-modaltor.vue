@@ -1,13 +1,15 @@
 <template>
 	<div class="div">
 		<div class="modal-vue-wrapper" :class="[animationParent,{'modal-vue-wrapper-show' : open}]" v-show="isOpen">
-			<div :class="['modal-vue-overlay',{'modal-vue-actions-parent':imgMode}]" @click="$emit('hide')" :style="{backgroundColor:bgOverlay}"></div>
+			 <!-- && isClose -->
+			<div :class="['modal-vue-overlay',{'modal-vue-actions-parent':(imgMode)}]" @click="$emit('hide')" :style="{backgroundColor:bgOverlay}"></div>
 			<div class="img-mode" v-if="imgMode">
 				<slot></slot>
 			</div>
 			<div :class="['modal-vue-panel',animationPanel,{'modal-vue-show':open}]" :style="{width:width,backgroundColor:bgPanel}" v-if="!imgMode">
 				<div class="modal-vue-content" >
 					<div  :class="{'modal-vue-actions':!imgMode}" v-if="!imgMode"> 
+						 <!-- v-if="isClose" -->
 						<div class="modal-vue-action-close" @click="$emit('hide')">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#292c34"></path></svg>
 						</div>
@@ -36,6 +38,11 @@ export default {
 		resizeWidth:{
 			type:Object,
 		},
+		// isClose:{
+		// 	type: Boolean,
+		// 	required: false,
+		// 	default: true
+		// },
 		animationPanel:{
 			type: String,
 			required: false,
@@ -98,8 +105,10 @@ export default {
 				if(this.closeScroll){
 					this._unlockBody()
 				}
-				this.open=false
-				setTimeout(() => this.isOpen = false, 300)			
+				// if (this.isClose){
+					this.open=false
+					setTimeout(() => this.isOpen = false, 300)			
+				// }
 			}
 		}
 	},
@@ -108,6 +117,15 @@ export default {
 		window.removeEventListener('resize', this.getWindowWidth);
 		window.removeEventListener('resize', this.getWindowHeight);
 	},
+	destroyed() {
+    if (this.open) {
+      if (this.closeScroll) {
+        this._unlockBody()
+      }
+      this.open = false
+      setTimeout(() => (this.isOpen = false), 300)
+    }
+  },
 	mounted(){
 		this.$nextTick(function() {
 			window.addEventListener('resize', this.getWindowWidth);
