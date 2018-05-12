@@ -56,7 +56,7 @@ export default {
 		bgPanel:{
 			type: String,
 			required: false,
-			default: '#fff'
+			default: 'rgba(255, 255, 255, 0.57)'
 		},
 		animationParent:{
 			type: String,
