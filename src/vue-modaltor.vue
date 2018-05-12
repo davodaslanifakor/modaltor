@@ -318,7 +318,7 @@ export default {
 .modal-vue-wrapper-show,.modal-vue-wrapper-show.modal-fade ,.modal-vue-wrapper-show.modal-scale{
 	visibility: visible;
 	opacity: 1;
-	background: rgba(255, 255, 255, 0.9);
+	// background: rgba(255, 255, 255, 0.9);
 	-webkit-transform: translate3D(0,0,0);
 	-ms-transform: translate3D(0,0,0);
 	-o-transform: translate3D(0,0,0);
