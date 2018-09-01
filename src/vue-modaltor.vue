@@ -8,10 +8,12 @@
 			</div>
 			<div :class="['modal-vue-panel',animationPanel,{'modal-vue-show':open}]" :style="{width:width,backgroundColor:bgPanel}" v-if="!imgMode">
 				<div class="modal-vue-content" >
-					<div  :class="{'modal-vue-actions':!imgMode}" v-if="!imgMode"> 
+					<div  :class="{'modal-vue-actions':!imgMode}" v-if="!imgMode">
 						 <!-- v-if="isClose" -->
 						<div class="modal-vue-action-close" @click="$emit('hide')">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#292c34"></path></svg>
+							<slot name="close-ico">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#292c34"></path></svg>
+							</slot>
 						</div>
 					</div>
 					<div class="modal-vue-content-panel" >
@@ -34,7 +36,7 @@ export default {
 			required: false,
 			default: false
 		},
-		
+
 		resizeWidth:{
 			type:Object,
 		},
@@ -93,7 +95,7 @@ export default {
 			}
 		}
 	},
-	watch:{ 
+	watch:{
 		visible(val) {
 			if(val){
 				this.isOpen=true
@@ -107,7 +109,7 @@ export default {
 				}
 				// if (this.isClose){
 					this.open=false
-					setTimeout(() => this.isOpen = false, 300)			
+					setTimeout(() => this.isOpen = false, 300)
 				// }
 			}
 		}
@@ -133,13 +135,13 @@ export default {
 			this.getWindowWidth()
 			this.getWindowHeight()
 		})
-		
+
 	},
 	methods:{
 		getWindowHeight(event) {
 			this.windowHeight = document.documentElement.clientHeight;
 				// if (this.windowHeight <= 500 && this.measureRating == '%') {
-				// 	this.heightPopupRating=100					
+				// 	this.heightPopupRating=100
 				// }else if(this.windowHeight <= 500 && this.measureRating == 'px'){
 				// 	this.heightPopupRating=500
 
@@ -248,7 +250,7 @@ export default {
 		left: 0;
 		right: 0;
 		margin:0 auto;
-		
+
 		opacity: 0;
 		transition-property: transform, opacity, width ;
 		transition-duration:0.3s;
@@ -269,7 +271,7 @@ export default {
 		&::-webkit-scrollbar-thumb
 		{
 			background-color: #41b9d2;
-		} 
+		}
 
 		.modal-vue-actions{
 			position: absolute;
@@ -295,7 +297,7 @@ export default {
 			padding-top: 24px;
 			padding-bottom: 24px;
 			line-height: 1.5;
-			
+
 			.modal-vue-content-panel{
 				display: block;
 				text-align:justify;
@@ -308,7 +310,7 @@ export default {
 			}
 		}
 	}
-	
+
 	.modal-vue-show{
 		transform: translate(0, -50%) !important;
 		opacity: 1 !important;
@@ -346,7 +348,7 @@ export default {
 	}
 }
 .modal-vue-actions-parent{
-	
+
 	&:before , &:after{
 		content:'';
 		display: block;

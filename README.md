@@ -1,6 +1,6 @@
 # vue-modaltor
 
- vue modal component for vuejs and i hope it be useful for everyone ... 
+ vue modal component for vuejs and i hope it be useful for everyone ...
 
 you can see example usages here
 [Demo](https://davodaslanifakor.github.io/modaltor)
@@ -37,9 +37,14 @@ if you are not using any build system you can include it in your project
   <script src="/vue-modaltor/dist/vue-modaltor.js"></script>
 ```
 
-# Example 
+# Example
 ```html
  <vue-modaltor  :visible="open" @hide="hideModal">
+	 <template slot="close-ico">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" xml:space="preserve">
+            <path class="st0" fill="#FFFFFF" d="M8.7,7.6c-0.4-0.4-1-0.4-1.4,0C6.9,8,6.9,8.6,7.3,9l11,11l-11,11c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0 l11-11l11,11c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4l-11-11L32,9c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-11,11L8.7,7.6z"/>
+        </svg>
+    </template>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -67,7 +72,7 @@ if you are not using any build system you can include it in your project
 
 ```js
 props: {
-   // this is for toggle show modal 
+   // this is for toggle show modal
    // :visible:false
     visible: {
       type: Boolean,
@@ -79,7 +84,7 @@ props: {
     resizeWidth:{
       type:Object,
     },
-    // this is for anaimating modal 
+    // this is for anaimating modal
     // :animation-panel='modal-slide-right'
     // :animation-panel='modal-slide-left'
     // :animation-panel='modal-slide-top'
@@ -89,7 +94,7 @@ props: {
       required: false,
       default: 'modal-fade'
     },
-    // this is for anaimating animationParent modal 
+    // this is for anaimating animationParent modal
     // :animation-parent='modal-scale'
     animationParent:{
       type: String,
@@ -125,7 +130,7 @@ props: {
       default: true
     }
     // this is option for show image
-    // :img-mode="true" 
+    // :img-mode="true"
     imgMode:{
       type: Boolean,
       required: false,
