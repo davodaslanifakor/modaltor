@@ -10,7 +10,6 @@ you can see example usages here
 * manage modal's size on diffrent dimenstions with one single attribute [see responsive](https://davodaslanifakor.github.io/modaltor#responsive)
 * scrollable modal, modal will get scroll if conntent is more than current view page height [see close-scroll](https://davodaslanifakor.github.io/modaltor#close-scroll)
 * modals has multiple parent animations [parent-animation](https://davodaslanifakor.github.io/modaltor#animation-parent)
-* modals has for image show [img-mode](https://davodaslanifakor.github.io/modaltor#imageMode)
 
 
 # Installation
@@ -40,8 +39,8 @@ if you are not using any build system you can include it in your project
 # Example
 ```html
  <vue-modaltor  :visible="open" @hide="hideModal">
-	 <template slot="close-ico">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" xml:space="preserve">
+	 <template slot="close-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="20" height="20" xml:space="preserve">
             <path class="st0" fill="#FFFFFF" d="M8.7,7.6c-0.4-0.4-1-0.4-1.4,0C6.9,8,6.9,8.6,7.3,9l11,11l-11,11c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0 l11-11l11,11c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4l-11-11L32,9c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-11,11L8.7,7.6z"/>
         </svg>
     </template>
@@ -128,13 +127,6 @@ props: {
       type: Boolean,
       required: false,
       default: true
-    }
-    // this is option for show image
-    // :img-mode="true"
-    imgMode:{
-      type: Boolean,
-      required: false,
-      default: false
     }
   },
 
