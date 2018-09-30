@@ -127,6 +127,13 @@ props: {
       type: Boolean,
       required: false,
       default: true
+    },
+    // this is option for showing/hiding close button on modal
+    // :show-close-button="false"  // if true close button will show
+    showCloseButton:{
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 
