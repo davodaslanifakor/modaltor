@@ -3,7 +3,7 @@
 		<div class="modal-vue-wrapper" :class="[animationParent,{'modal-vue-wrapper-show' : open}]" v-show="isOpen">
 			<div :class="['modal-vue-overlay']" @click="$emit('hide')" :style="{backgroundColor:bgOverlay}"></div>
 			<div :class="['modal-vue-panel',animationPanel,{'modal-vue-show':open}]" :style="{width:width,backgroundColor:bgPanel}">
-				<div class="modal-vue---close-icon" @click="$emit('hide')">
+				<div class="modal-vue---close-icon" @click="$emit('hide')" v-show="isShowCloseButton">
 					<slot name="close-icon">
 						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="20" height="20" xml:space="preserve">
 							<path class="st0" fill="#010110" d="M8.7,7.6c-0.4-0.4-1-0.4-1.4,0C6.9,8,6.9,8.6,7.3,9l11,11l-11,11c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0 l11-11l11,11c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4l-11-11L32,9c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-11,11L8.7,7.6z" />
@@ -62,6 +62,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    showCloseButton: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   data() {
@@ -69,6 +74,7 @@ export default {
       width: this.defaultWidth || "80%",
       open: false,
       isOpen: false,
+      isShowCloseButton: true,
       backups: {
         body: {
           height: null,
@@ -95,6 +101,11 @@ export default {
         setTimeout(() => (this.isOpen = false), 300);
         // }
       }
+    },
+    showCloseButton(val) {
+      if (typeof(val) == typeof(true)) {
+        this.isShowCloseButton = val;
+      } 
     }
   },
 
