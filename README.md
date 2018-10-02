@@ -1,4 +1,6 @@
 # vue-modaltor
+# Changelog
+All notable changes to [this](https://github.com/davodaslanifakor/modaltor/blob/master/changelog.md) project will be documented in this file.
 
  vue modal component for vuejs and i hope it be useful for everyone ...
 

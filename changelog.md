@@ -16,3 +16,10 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - Fix close icon slot
+
+## [1.3.2] - 2018-10-02
+
+### Added
+
+- add new option for close icon model show or not 'showCloseButton'
+
