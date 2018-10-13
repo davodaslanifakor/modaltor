@@ -23,3 +23,8 @@ All notable changes to this project will be documented in this file.
 
 - add new option for close icon model show or not 'showCloseButton'
 
+## [1.3.3] - 2018-13-10
+
+### Fixed
+
+- remove /dist from .gitignore
