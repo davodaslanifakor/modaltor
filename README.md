@@ -8,6 +8,9 @@ vue modal component for vuejs and i hope it be useful for everyone ...
 
 you can see example usages here
 [Demo](https://davodaslanifakor.github.io/modaltor)
+or
+
+see [![Edit Vue Template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/63vvr24qn)
 
 # Features
 

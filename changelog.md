@@ -28,3 +28,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - remove /dist from .gitignore
+
+### Added
+
+- demo link in codesandbox
