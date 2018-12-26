@@ -32,3 +32,16 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - demo link in codesandbox
+
+
+## [1.3.5] - 2018-12-23
+
+### Fixed
+
+- improve style
+
+### Added
+
+- demo some animation for panel
+
+
