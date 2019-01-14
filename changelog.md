@@ -43,6 +43,14 @@ All notable changes to this project will be documented in this file.
 
 - demo some animation for panel
 
+## [1.3.6] - 2019-01-14
+
 ### Update
 
 - update npm ...
+
+## [1.3.7] - 2019-01-14
+
+### Added
+
+- add config global props
