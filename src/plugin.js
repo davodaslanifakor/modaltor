@@ -1,7 +1,7 @@
 import vueModaltor from "./vue-modaltor.vue";
 const modalTor = {
   install(Vue, options) {
-    Vue.component("vue-modaltor", vueModaltor);
+    Vue.component("vue-modaltor", vueModaltor, options);
   }
 };
 export default modalTor;
