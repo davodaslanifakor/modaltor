@@ -12,6 +12,7 @@
     "build": "webpack --config ./webpack.config.js"
   },
   "dependencies": {
+    "update": "^0.7.4",
     "vue": "2.5.11",
     "webpack-merge": "^4.1.1"
   },

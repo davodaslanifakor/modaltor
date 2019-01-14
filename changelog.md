@@ -33,7 +33,6 @@ All notable changes to this project will be documented in this file.
 
 - demo link in codesandbox
 
-
 ## [1.3.5] - 2018-12-23
 
 ### Fixed
@@ -44,4 +43,6 @@ All notable changes to this project will be documented in this file.
 
 - demo some animation for panel
 
+### Update
 
+- update npm ...
