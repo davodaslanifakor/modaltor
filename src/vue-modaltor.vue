@@ -108,11 +108,7 @@ export default {
   watch: {
     visible(val) {
       if (val) {
-        this.isOpen = true;
-        setTimeout(() => (this.open = true), 30);
-        if (this.closeScroll) {
-          this._lockBody();
-        }
+        this.openModal();
       } else {
         if (this.closeScroll) {
           this._unlockBody();
@@ -138,6 +134,9 @@ export default {
   },
   mounted() {
     this.$nextTick(function() {
+      if (this.visible) {
+        this.openModal();
+      }
       window.addEventListener("resize", this.getWindowWidth);
       window.addEventListener("resize", this.getWindowHeight);
       this.getWindowWidth();
@@ -145,6 +144,13 @@ export default {
     });
   },
   methods: {
+    openModal () {
+      this.isOpen = true;
+      setTimeout(() => (this.open = true), 30);
+      if (this.closeScroll) {
+        this._lockBody();
+      }
+    },
     getWindowHeight(event) {
       this.windowHeight = document.documentElement.clientHeight;
     },
@@ -205,7 +211,7 @@ export default {
       -o-transform: scale(-1, 1);
       transform: scale(-1, 1);
     }
-    
+
   }
   &-wrapper-show{
     &.modal-fade,&.modal-scale{
@@ -277,7 +283,7 @@ export default {
     &.modal-slide-bottom {
       transform: translate(0, 100%);
     }
-    
+
     &::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
       background-color: #f5f5f5;
