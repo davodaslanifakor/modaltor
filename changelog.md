@@ -54,3 +54,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - add config global props
+
+## [1.3.10] - 2019-10-5
+
+### Added
+
+-add ability to have the modal open by default on the initial load
