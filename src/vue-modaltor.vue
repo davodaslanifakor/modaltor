@@ -32,8 +32,8 @@
             </svg>
           </slot>
         </div>
-        <div class="modal-vue--content">
-          <div class="modal-vue--content-panel">
+        <div class="modal-vue--content" :class="{'space-content':!zeroSpace}">
+          <div class="modal-vue--content-panel" :class="{'space-content':!zeroSpace}">
             <slot></slot>
           </div>
         </div>
@@ -88,6 +88,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    zeroSpace: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   data() {
@@ -301,19 +306,23 @@ export default {
   &--content {
     display: flex;
     align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 24px;
-    padding-bottom: 24px;
     line-height: 1.5;
+    &.space-content {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
   }
   &--content-panel {
     display: block;
     text-align: justify;
     font-size: 16px;
-    padding-top: 5px;
-    padding-bottom: 10px;
     flex-grow: 1;
+    &.space-content {
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
   }
   .modal-vue-show {
     transform: translate(0, -50%) !important;

@@ -60,3 +60,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 -add ability to have the modal open by default on the initial load
+
+## [1.3.12] - 2019-10-22
+
+### Added
+
+-add new option for zero spacing in content name is ```zeroSpace```

@@ -158,6 +158,13 @@ props: {
       type: Boolean,
       required: false,
       default: true
+    },
+    // this is option for space in content slot
+    // u can castumize this
+     zeroSpace: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
