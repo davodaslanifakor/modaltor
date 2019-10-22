@@ -28,7 +28,7 @@
                 class="st0"
                 fill="#010110"
                 d="M8.7,7.6c-0.4-0.4-1-0.4-1.4,0C6.9,8,6.9,8.6,7.3,9l11,11l-11,11c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0 l11-11l11,11c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4l-11-11L32,9c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-11,11L8.7,7.6z"
-              ></path>
+              />
             </svg>
           </slot>
         </div>
@@ -144,7 +144,7 @@ export default {
     });
   },
   methods: {
-    openModal () {
+    openModal() {
       this.isOpen = true;
       setTimeout(() => (this.open = true), 30);
       if (this.closeScroll) {
@@ -211,10 +211,10 @@ export default {
       -o-transform: scale(-1, 1);
       transform: scale(-1, 1);
     }
-
   }
-  &-wrapper-show{
-    &.modal-fade,&.modal-scale{
+  &-wrapper-show {
+    &.modal-fade,
+    &.modal-scale {
       visibility: visible;
       opacity: 1;
       -webkit-transform: translate3D(0, 0, 0);
@@ -230,7 +230,7 @@ export default {
     transform: translate3D(0, 0, 0);
   }
   &-overlay {
-    position:fixed;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -285,6 +285,7 @@ export default {
     }
 
     &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
       background-color: #f5f5f5;
     }
@@ -319,5 +320,4 @@ export default {
     opacity: 1 !important;
   }
 }
-
 </style>
