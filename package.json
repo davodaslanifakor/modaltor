@@ -1,12 +1,20 @@
 {
-  "name": "modaltor",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-modaltor",
+  "description": "modal component for vuejs",
+  "version": "1.4.0",
+  "author": "davodasalnifakor@gmail.com <davodaslanifakor@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davodaslanifakor/modaltor"
+  },
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-library": "vue-cli-service build --target lib --name vue-modaltor ./src/install.js",
     "lint": "vue-cli-service lint"
   },
+  "main": ".dist/modaltor.common.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
@@ -18,6 +26,8 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "4.14.1",
+    "sass-loader": "8.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -38,5 +48,8 @@
     "> 1%",
     "last 2 versions",
     "not dead"
+  ],
+  "files": [
+    "dist/*"
   ]
 }
