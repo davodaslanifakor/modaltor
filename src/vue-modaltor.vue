@@ -191,7 +191,6 @@ export default {
 <style lang="less">
 .modal-vue {
   &-wrapper {
-    position: absolute;
     position: fixed;
     top: 0;
     left: 0;

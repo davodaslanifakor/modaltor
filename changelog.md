@@ -66,3 +66,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 -add new option for zero spacing in content name is ```zeroSpace```
+
+## [1.3.14] - 2021-5-14
+
+### Update
+
+-update all packages
