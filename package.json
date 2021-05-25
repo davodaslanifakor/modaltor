@@ -50,6 +50,7 @@
     "not dead"
   ],
   "files": [
-    "dist/*"
+    "dist/*",
+    "src/components/*"
   ]
 }
