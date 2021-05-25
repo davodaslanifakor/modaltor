@@ -85,3 +85,9 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - fix file published array
+
+## [1.4.2] - 2021-5-15
+
+### Added
+
+- add example for nuxt ssr
