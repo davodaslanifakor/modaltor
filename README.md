@@ -55,6 +55,12 @@ plugins: [
     "~/plugins/modal.js"
 ]
 ```
+
+# Also, can use CDN
+[![](https://data.jsdelivr.com/v1/package/npm/vue-modaltor/badge?style=rounded)](https://www.jsdelivr.com/package/npm/vue-modaltor)
+
+And check it this [issues](https://github.com/davodaslanifakor/modaltor/issues/13) 
+
 # Example
 
 ```vue
@@ -169,14 +175,13 @@ export default {
 ```
 
 
-#Slots
+# Slots
 
-#default 
-- can add content modal body
+    #default 
+        - can add content modal body
 
-#close-icon
-
-- can add custom icon
+    #close-icon
+        - can add custom icon
 
 
 
