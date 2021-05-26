@@ -6,17 +6,15 @@ All notable changes to [this](changelog.md) project will be documented in this f
 
 vue modal component for vuejs and i hope it be useful for everyone ...
 
-you can see example usages here
-[Demo](https://davodaslanifakor.github.io/modaltor)
-or
+you can see example usages here 
 
-see [![Edit Vue Template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/63vvr24qn)
+ [![Edit Vue Template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/63vvr24qn)
 
 # Features
 
 - no need to handle modal's height manually it extends as the content of modal increases .
-- manage modal's size on diffrent dimenstions with one single attribute [see responsive](https://davodaslanifakor.github.io/modaltor#responsive)
-- scrollable modal, modal will get scroll if conntent is more than current view page height [see close-scroll](https://davodaslanifakor.github.io/modaltor#close-scroll)
+- manage modal's size on different dimensions with one single attribute [see responsive](https://davodaslanifakor.github.io/modaltor#responsive)
+- scrollable modal, modal will get scroll if content is more than current view page height [see close-scroll](https://davodaslanifakor.github.io/modaltor#close-scroll)
 - modals has multiple parent animations [parent-animation](https://davodaslanifakor.github.io/modaltor#animation-parent)
 - edit icon close svg or icon font [parent-animation](https://davodaslanifakor.github.io/modaltor#svg)
 - hide icon close [parent-animation](https://davodaslanifakor.github.io/modaltor#show-close-button)
@@ -37,8 +35,12 @@ then you can import modaltor in
 
 ```js
 import Vue from "vue";
-import VueModalTor from "vue-modaltor";
-Vue.use(VueModalTor);
+import VueModalTor from "vue-modaltor/dist/vue-modaltor.common";
+import "vue-modaltor/dist/vue-modaltor.css";
+
+Vue.use(VueModalTor, {
+    bgPanel: "#7957d5"  // add custome options
+});
 ```
 
 ### NUXT-SSR
@@ -67,14 +69,22 @@ And check it this [issues](https://github.com/davodaslanifakor/modaltor/issues/1
 <template>
   <div>
     <vue-modaltor :visible="open" @hide="open=false">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <template #header>
+      <!--    add your custom header     -->
+        <div>
+          <i class="closeicon">x</i>
+          <p>add modal title or not</p>
+        </div>
+      </template>
+      <template #body>
+          <p>
+            “Never forget what you are,
+            for surely the world will not. 
+            Make it your strength. Then it can never be your weakness.
+            Armour yourself in it, and it will never be used to hurt you.
+            ” ― George R.R. Martin, A Game of Thrones.
+          </p>
+        </template>
     </vue-modaltor>
     <button @click="open=true">modal-basic</button>
   </div>

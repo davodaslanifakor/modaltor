@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- waiting for change
+## [1.5.2] - 2021-5-26
+
+### Update
+
+- update document in readme
+
+## [1.5.1] - 2021-5-26
+
+### Fixed
+ - Fixed main url
 
 ## [1.5.0] - 2021-5-26
 
