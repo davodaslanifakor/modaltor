@@ -154,20 +154,6 @@ export default {
         type: Boolean,
         required: false,
         default: true
-      },
-      // this is option for showing/hiding close button on modal
-      // :show-close-button="false"  // if true close button will show
-      showCloseButton:{
-        type: Boolean,
-        required: false,
-        default: true
-      },
-      // this is option for space in content slot
-      // u can castumize this
-      zeroSpace: {
-        type: Boolean,
-        required: false,
-        default: false
       }
     }
   }
@@ -177,14 +163,15 @@ export default {
 
 # Slots
 
-    #default 
-        - can add content modal body
+    #header
+        - create your own header
 
-    #close-icon
-        - can add custom icon
+    #body 
+        - create your own body
+
 
 
 
 # TODO List
 
-- [ ] Add custom slot for header , body and footer
+- [x] Add custom slot for header , body and footer

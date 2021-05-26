@@ -1,6 +1,6 @@
 <template>
 <div>
-  <vue-modaltor :visible="modal1" @hide="modal1 = false">
+  <vue-modaltor :visible="modal1" @hideModal="modal1 = false">
    <template #body>
      hello im modal
      hello im modal
@@ -9,10 +9,10 @@
      hello im modal
      hello im modal
    </template>
+    <template #footer>
+    hello im footer
+    </template>
   </vue-modaltor>
-  <button @click="modal1 = true">
-    open modal
-  </button>
 </div>
 </template>
 
@@ -26,8 +26,8 @@ export default {
   },
   data() {
     return {
-      modal1: false
+      modal1: false,
     }
-  },
+  }
 }
 </script>

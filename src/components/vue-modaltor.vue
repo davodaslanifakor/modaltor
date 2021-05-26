@@ -1,19 +1,25 @@
 <template>
-  <div class="modaltor"
-       :class="[animationParent,{'modaltor--show' : open}]"
-       v-show="isOpen">
+  <div
+      v-show="isOpen"
+      class="modaltor"
+      :class="[animationParent, { 'modaltor--show': open }]"
+  >
     <div
         :class="['modaltor__overlay']"
-        @click="$emit('hide')"
-        :style="{backgroundColor:bgOverlay}"
+        :style="{ backgroundColor: bgOverlay }"
+        @click="emitHideModal"
     ></div>
     <div
-        :class="['modaltor__panel',animationPanel,{'modaltor__panel--show':open}]"
-        :style="{width:width,backgroundColor:bgPanel}"
+        :class="[
+        'modaltor__panel',
+        animationPanel,
+        { 'modaltor__panel--show': open }
+      ]"
+        :style="{ width: width, backgroundColor: bgPanel }"
     >
-      <slot name="header">
-        <div class="modaltor__header">
-          <div class="modaltor__close" @click="hiddenModal">
+      <div class="modaltor__header">
+        <slot name="header">
+          <div class="modaltor__close" @click="emitHideModal">
             <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -29,12 +35,14 @@
               />
             </svg>
           </div>
-        </div>
-      </slot>
-        <slot name="body">
-          <div class="modaltor__content">
-          </div>
         </slot>
+      </div>
+      <div class="modaltor__content">
+        <slot name="body"> </slot>
+      </div>
+      <div class="modaltor__footer" v-if="$slots.footer">
+        <slot name="footer"> </slot>
+      </div>
     </div>
   </div>
 </template>
@@ -43,7 +51,7 @@
 import "./vue-modaltor.scss"
 
 export default {
-  name: "modaltor-perfect",
+  name: "ModaltorPerfect",
   props: {
     visible: {
       type: Boolean,
@@ -95,86 +103,98 @@ export default {
           overflow: null,
           paddingRight: null
         }
-      }
-    };
+      },
+      timout: null
+    }
   },
   watch: {
     visible(val) {
       if (val) {
-        this.openModal();
+        this.openModal()
       } else {
-        if (this.closeScroll) {
-          this._unlockBody();
-        }
-        this.open = false;
-        setTimeout(() => (this.isOpen = false), 300);
+        this.hiddenModal()
       }
     }
   },
-
   beforeDestroy() {
-    window.removeEventListener("resize", this.getWindowWidth);
-    window.removeEventListener("resize", this.getWindowHeight);
+    window.removeEventListener("resize", this.getWindowWidth)
   },
   destroyed() {
-    if (this.open) {
-      if (this.closeScroll) {
-        this._unlockBody();
-      }
-      this.open = false;
-      setTimeout(() => (this.isOpen = false), 300);
-    }
+    this.destroyModal()
   },
   mounted() {
     this.$nextTick(function () {
       if (this.visible) {
-        this.openModal();
+        this.openModal()
       }
-      window.addEventListener("resize", this.getWindowWidth);
-      window.addEventListener("resize", this.getWindowHeight);
-      this.getWindowWidth();
-      this.getWindowHeight();
-    });
+      window.addEventListener("resize", this.getWindowWidth)
+      this.getWindowWidth()
+    })
   },
   methods: {
-    hiddenModal(){
-      this.$emit("hide")
+    clearTimoutModal(){
+      clearTimeout(this.timout)
     },
-    openModal() {
-      this.isOpen = true;
-      setTimeout(() => (this.open = true), 30);
-      if (this.closeScroll) {
-        this._lockBody();
+    emitHideModal() {
+      this.$emit("hideModal")
+    },
+    finishHiddenModal() {
+      this.$emit("finishHidden")
+    },
+    destroyModal() {
+      if (this.open) {
+        if (this.closeScroll) {
+          this._unlockBody()
+        }
+        this.open = false
+        this.clearTimoutModal()
+        this.timout = setTimeout(() => (this.isOpen = false), 300)
       }
     },
-    getWindowHeight() {
-      this.windowHeight = document.documentElement.clientHeight;
+    hiddenModal() {
+      if (this.closeScroll) {
+        this._unlockBody()
+      }
+      this.open = false
+      this.clearTimoutModal()
+      this.timout = setTimeout(() => {
+        this.isOpen = false
+        this.finishHiddenModal()
+      }, 300)
+    },
+    openModal() {
+      this.isOpen = true
+      this.clearTimoutModal()
+      this.timout = setTimeout(() => (this.open = true), 30)
+      if (this.closeScroll) {
+        this._lockBody()
+      }
     },
     getWindowWidth() {
       if (this.resizeWidth && Object.keys(this.resizeWidth).length > 0) {
-        this.windowWidth = document.documentElement.clientWidth;
-        var filter = Object.keys(this.resizeWidth).find(
-            f => f >= this.windowWidth
-        );
+        this.windowWidth = document.documentElement.clientWidth
+        const filter = Object.keys(this.resizeWidth).find(
+            (f) => f >= this.windowWidth
+        )
         if (filter) {
-          this.width = this.resizeWidth[filter];
+          this.width = this.resizeWidth[filter]
         } else {
-          this.width = this.defaultWidth;
+          this.width = this.defaultWidth
         }
       }
     },
     _lockBody() {
-      this.backups.body.height = document.body.style.height;
-      this.backups.body.overflow = document.body.style.overflow;
-      document.body.style.paddingRight = "15px";
-      document.body.style.height = "100%";
-      document.body.style.overflow = "hidden";
+      this.backups.body.height = document.body.style.height
+      this.backups.body.overflow = document.body.style.overflow
+      document.body.style.paddingRight = "15px"
+      document.body.style.height = "100%"
+      document.body.style.overflow = "hidden"
     },
     _unlockBody() {
-      document.body.style.height = this.backups.body.height;
-      document.body.style.overflow = this.backups.body.overflow;
-      document.body.style.paddingRight = this.backups.body.paddingRight;
+      document.body.style.height = this.backups.body.height
+      document.body.style.overflow = this.backups.body.overflow
+      document.body.style.paddingRight = this.backups.body.paddingRight
     }
   }
-};
+}
 </script>
