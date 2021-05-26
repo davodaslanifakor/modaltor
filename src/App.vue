@@ -1,8 +1,18 @@
 <template>
 <div>
-  <vue-modaltor :visible="true">
-    hello im modal
+  <vue-modaltor :visible="modal1" @hide="modal1 = false">
+   <template #body>
+     hello im modal
+     hello im modal
+     hello im modal
+     hello im modal
+     hello im modal
+     hello im modal
+   </template>
   </vue-modaltor>
+  <button @click="modal1 = true">
+    open modal
+  </button>
 </div>
 </template>
 
@@ -13,6 +23,11 @@ export default {
   name: 'App',
   components: {
     vueModaltor
-  }
+  },
+  data() {
+    return {
+      modal1: false
+    }
+  },
 }
 </script>

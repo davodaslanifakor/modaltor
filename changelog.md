@@ -91,3 +91,11 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - add example for nuxt ssr
+
+
+## [Unreleased]
+
+### Update
+
+- refactor class name to [BEM](http://getbem.com/naming/)
+- move style to external file
