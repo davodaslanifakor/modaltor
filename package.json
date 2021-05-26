@@ -1,7 +1,7 @@
 {
   "name": "vue-modaltor",
   "description": "Modal plugin for Nuxt.js and Vue.js",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "author": "davodasalnifakor@gmail.com <davodaslanifakor@gmail.com>",
   "repository": {
     "type": "git",
