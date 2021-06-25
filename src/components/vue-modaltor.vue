@@ -2,7 +2,7 @@
   <div
       v-show="isOpen"
       class="modaltor"
-      :class="[animationParent, { 'modaltor--show': open }]"
+      :class="[`modaltor--${animationParent}`, { 'modaltor--show': open }]"
   >
     <div
         :class="['modaltor__overlay']"
@@ -12,7 +12,7 @@
     <div
         :class="[
         'modaltor__panel',
-        animationPanel,
+        `modaltor__panel--${animationPanel}`,
         { 'modaltor__panel--show': open }
       ]"
         :style="{ width: width, backgroundColor: bgPanel }"
@@ -90,6 +90,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    spaceScroll: {
+      type: String,
+      required: false,
+      default: "15px"
     }
   },
   data() {
@@ -190,7 +195,7 @@ export default {
       if (this._hasScrollbar()) {
         this.backups.body.height = document.body.style.height
         this.backups.body.overflow = document.body.style.overflow
-        document.body.style.paddingRight = "15px"
+        document.body.style.paddingRight = this.spaceScroll
         document.body.style.height = "100%"
         document.body.style.overflow = "hidden"
       }

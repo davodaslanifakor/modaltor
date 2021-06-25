@@ -72,7 +72,7 @@ And check it this [issues](https://github.com/davodaslanifakor/modaltor/issues/1
       <template #header>
       <!--    add your custom header     -->
         <div>
-          <i class="closeicon">x</i>
+          <i class="close-icon">x</i>
           <p>add modal title or not</p>
         </div>
       </template>
@@ -120,30 +120,30 @@ export default {
       resizeWidth:{
         type:Object,
       },
-      // this is for anaimating modal
-      // :animation-panel='modal-slide-right'
-      // :animation-panel='modal-slide-left'
-      // :animation-panel='modal-slide-top'
-      // :animation-panel='modal-slide-bottom'
+      // this is for animating modal
+      // :animation-panel='slide-right'
+      // :animation-panel='slide-left'
+      // :animation-panel='slide-top'
+      // :animation-panel='slide-bottom'
       animationPanel:{
         type: String,
         required: false,
         default: 'modal-fade'
       },
-      // this is for anaimating animationParent modal
-      // :animation-parent='modal-scale'
+      // this is for animating animationParent modal
+      // :animation-parent='scale'
       animationParent:{
         type: String,
         required: false,
         default: 'modal-fade'
       },
-      // this is for bgcolor overlay
+      // this is for color overlay
       bgOverlay:{
         type: String,
         required: false,
         default: '#fff'
       },
-      // this is for bgcolor panel
+      // this is for color panel
       bgPanel:{
         type: String,
         required: false,
@@ -164,6 +164,13 @@ export default {
         type: Boolean,
         required: false,
         default: true
+      },
+      // this. for padding right scroll body 
+      // when modal is open and has scroll when closeScroll is true
+      spaceScroll:{
+        type: String,
+        required: false,
+        default: "15px"
       }
     }
   }
