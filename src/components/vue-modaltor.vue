@@ -183,17 +183,24 @@ export default {
         }
       }
     },
+    _hasScrollbar() {
+      return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight)
+    },
     _lockBody() {
-      this.backups.body.height = document.body.style.height
-      this.backups.body.overflow = document.body.style.overflow
-      document.body.style.paddingRight = "15px"
-      document.body.style.height = "100%"
-      document.body.style.overflow = "hidden"
+      if (this._hasScrollbar()) {
+        this.backups.body.height = document.body.style.height
+        this.backups.body.overflow = document.body.style.overflow
+        document.body.style.paddingRight = "15px"
+        document.body.style.height = "100%"
+        document.body.style.overflow = "hidden"
+      }
     },
     _unlockBody() {
-      document.body.style.height = this.backups.body.height
-      document.body.style.overflow = this.backups.body.overflow
-      document.body.style.paddingRight = this.backups.body.paddingRight
+      if (this._hasScrollbar()) {
+        document.body.style.height = this.backups.body.height
+        document.body.style.overflow = this.backups.body.overflow
+        document.body.style.paddingRight = this.backups.body.paddingRight
+      }
     }
   }
 }
