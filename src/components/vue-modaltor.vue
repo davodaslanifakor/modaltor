@@ -121,10 +121,10 @@ export default {
       }
     }
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener("resize", this.getWindowWidth)
   },
-  destroyed() {
+  unmounted() {
     this.destroyModal()
   },
   mounted() {
