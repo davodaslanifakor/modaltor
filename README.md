@@ -39,8 +39,21 @@ import VueModalTor from "vue-modaltor/dist/vue-modaltor.common";
 import "vue-modaltor/dist/vue-modaltor.css";
 
 Vue.use(VueModalTor, {
-    bgPanel: "#7957d5"  // add custome options
+    bgPanel: "#7957d5"  // add custom options
 });
+```
+
+### VUE3
+
+```js
+import { createApp } from "vue";
+import VueModalTor from "vue-modaltor/dist/vue-modaltor.common";
+import "vue-modaltor/dist/vue-modaltor.css";
+import App from "./App.vue";
+
+const app = createApp(App);
+app.use(VueModalTor, { bgPanel: "#7957d5" });
+app.mount("#app");
 ```
 
 ### NUXT-SSR
